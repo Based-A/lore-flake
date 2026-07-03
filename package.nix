@@ -86,10 +86,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     changelog = "https://github.com/EpicGames/lore/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
     sourceProvenance = [ lib.sourceTypes.fromSource ];
-    maintainers = [
-      lib.maintainers.jchw
-      lib.maintainers.griffi-gh
-    ];
     mainProgram = "lore";
     platforms = lib.platforms.unix;
   };

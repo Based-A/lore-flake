@@ -20,6 +20,12 @@
           lore = pkgs.callPackage ./package.nix { };
         };
       };
+      flake = {
+        nixosModules = {
+          default = ./service.nix;
+          loreserver = import ./service.nix;
+        };
+      };
       systems = [
         "x86_64-linux"
         "aarch64-darwin"
