@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  self,
   ...
 }:
 
@@ -47,7 +48,7 @@ in
   options.services.loreserver = {
     enable = lib.mkEnableOption "the Lore version control server";
 
-    package = lib.mkPackageOption config.packages { };
+    package = lib.mkPackageOption self.packages "lore" { };
 
     environment = lib.mkOption {
       type = lib.types.str;
