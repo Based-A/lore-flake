@@ -48,7 +48,7 @@ in
   options.services.loreserver = {
     enable = lib.mkEnableOption "the Lore version control server";
 
-    package = lib.mkPackageOption pkgs "lore" { };
+    package = lib.mkPackageOption pkgs "lore-vcs" { };
 
     environment = lib.mkOption {
       type = lib.types.str;

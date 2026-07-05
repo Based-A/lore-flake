@@ -10,7 +10,7 @@
 }:
 
 rustPlatform.buildRustPackage (finalAttrs: {
-  pname = "lore";
+  pname = "lore-vcs";
   version = "0.8.4";
 
   outputs = [

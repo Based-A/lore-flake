@@ -16,8 +16,8 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       perSystem = { config, pkgs, ... }: {
         packages = {
-          default = config.packages.lore;
-          lore = pkgs.callPackage ./package.nix { };
+          default = config.packages.lore-vcs;
+          lore-vcs = pkgs.callPackage ./package.nix { };
         };
       };
       flake = {
