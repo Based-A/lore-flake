@@ -26,9 +26,16 @@
           loreserver = import ./service.nix;
         };
         overlays = {
-          default = final: prev: {
-            lore = final.callPackage ./package.nix;
-          };
+          default = self.overlays.lore-overlay;
+          lore-overlay =
+            final: prev:
+            let
+              callPackage = prev.lib.callPackageWith (prev // packages);
+              packages = {
+                lore = callPackage ./package.nix;
+              };
+            in
+            packages;
         };
       };
       systems = [
