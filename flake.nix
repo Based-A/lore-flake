@@ -26,7 +26,7 @@
           loreserver = import ./service.nix;
         };
         overlays = final: prev: {
-          lore = final.callPackage ./package.nix;
+          default = final.callPackage ./package.nix;
         };
       };
       systems = [
